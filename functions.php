@@ -158,7 +158,4 @@ function add_login_logout_link($items, $args)
     return $items;
 }
 
-function myFntoTestGit()
-{
-	return 1+1;
-}
+
