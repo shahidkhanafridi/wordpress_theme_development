@@ -34,6 +34,9 @@
 			</li>
 		<?php endif;?> -->
 
+
+		<?php get_template_part('includes/form','enquiry');?>
+
 		<!-- usign Advance Custom Fields plugin -->
 
 			<li>
