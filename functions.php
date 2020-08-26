@@ -217,3 +217,18 @@ function register_navwalker(){
 	require_once get_template_directory() . '/class-wp-bootstrap-navwalker.php';
 }
 add_action( 'after_setup_theme', 'register_navwalker' );
+
+
+add_action('phpmailer_init','custom_mailer');
+function custom_mailer(PHPMailer $phpmailer)
+{
+	$phpmailer->SetFrom('abcxyz@gmail.com','Test Person');
+	$phpmailer->Host='smtp.gmail.com';
+	$phpmailer->Port=587;
+	$phpmailer->SMTPAuth=true;
+	$phpmailer->SMTPSecure='tls';
+	// it is better to declare global variable in wp-config.php for username and password
+	$phpmailer->Username='username'; 
+	$phpmailer->Password='password';
+	$phpmailer->IsSMTP();
+}
